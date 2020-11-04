@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #343a4e;
+    background-color: #8c98c1;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+}
+
+.head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px 200px;
+    margin-bottom: 20px;
+    padding: 0px 30px;
+}
+
+#getWord {
+    padding: 0px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px 25px;
+}
+
+.main div {
+    height: 450px;
+}
+
+#gameName {
+    font-size: 70px;
+    font-family: 'Rye', cursive;
+}

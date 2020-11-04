@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500&display=swap');
+body {
+    background-image: url("../images/BG.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+.box {
+    background-color: white;
+    opacity: 0.6;
+    width: 80%;
+    padding: 28px;
+    margin: 50px 50px;
+    border-radius: 20px;
+}
+
+.right {
+    margin-top: 11vh;
+    font-family: 'Itim', cursive;
+    font-size: 30px;
+}
+
+.join-main {
+    width: 50%;
+    margin: 38% 0% 0% 21%;
+    padding: 20px 0px;
+    border-radius: 10px;
+    background: #9c9ead45;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.join-main p {
+    margin-bottom: 20px;
+}
+
+.join-main .form-control {
+    margin-bottom: 20px;
+}
+
+.join-main input[type='text'] {
+    font-size: 16px;
+    padding: 10px;
+    width: 90%;
+    margin: 10px 30px;
+}
+
+.join-main .btn {
+    margin: 0px 30px;
+    margin-top: 20px;
+    width: 90%;
+    padding: 10px 0px;
+}
+
+#new_room_code_div {
+    display: none;
+}
+
+#new_room_code_div span {
+    font-family: 'Grenze Gotisch', cursive;
+    font-size: 40px;
+}
