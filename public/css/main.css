@@ -8,8 +8,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #343a4e;
-    background-color: #8c98c1;
+    background-image: url(../images/i.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
