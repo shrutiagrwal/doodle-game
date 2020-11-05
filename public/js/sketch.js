@@ -7,12 +7,15 @@ let paint = false;
 let line_color = "orange";
 let line_width = 10;
 
-function changeColor( newColor ){
+function changeColor(newColor) {
+    //sends brush color to server
+    socket.emit('color', newColor)
     line_color = newColor;
 }
 
 
 function clearAll() {
+    socket.emit('clearCanvas', true);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -76,9 +79,11 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', resize);
 });
 
-//receiving positions during drawing
+//receiving positions of player from server 
 ctx.moveTo(0, 0)
-
+socket.on('clearCanvas', value => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+})
 socket.on('positions', data => {
 
     ctx.beginPath();
@@ -87,7 +92,13 @@ socket.on('positions', data => {
     // // Sets the end of the lines drawn 
     // // to a round shape. 
     ctx.lineCap = 'round';
-    ctx.strokeStyle = line_color;
+
+    //receiving brush color from server
+    socket.on('color', line_color => {
+        ctx.strokeStyle = line_color
+    })
+
+    // ctx.strokeStyle = line_color;
     ctx.lineTo(data.x, data.y);
     ctx.moveTo(data.x, data.y)
 

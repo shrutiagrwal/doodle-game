@@ -93,17 +93,26 @@ io.on('connection', socket => {
     });
 
 
-    // Drawing 
+    // Drawing --------
     // recieves positions of canvas from client
     socket.on('positions', data => {
-        // console.log("dd ")
-        //sends positions of canvas to all other clients
+            // console.log("dd ")
+            //sends positions of canvas to all other clients
+            const user = getCurrentUser(socket.id);
+            // console.log(user)
+            // console.log(all)
+            socket.to(user.room).broadcast.emit('positions', data)
+        })
+        //recieves brush color
+    socket.on('color', newcolor => {
+            const user = getCurrentUser(socket.id);
+            socket.to(user.room).broadcast.emit('color', newcolor)
+        })
+        // receives that user wants to clear screen
+    socket.on('clearCanvas', value => {
         const user = getCurrentUser(socket.id);
-        // console.log(user)
-        // console.log(all)
-        socket.to(user.room).broadcast.emit('positions', data)
+        socket.to(user.room).broadcast.emit('clearCanvas', value)
     })
-
 
     // Runs when client disconnects
     socket.on('disconnect', () => {
