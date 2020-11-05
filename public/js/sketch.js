@@ -11,9 +11,6 @@ function changeColor( newColor ){
     line_color = newColor;
 }
 
-function changeSize( newSize ){
-    line_width = newSize;
-}
 
 function clearAll() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
