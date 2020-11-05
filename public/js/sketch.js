@@ -92,8 +92,8 @@ socket.on('positions', data => {
     // // Sets the end of the lines drawn 
     // // to a round shape. 
     ctx.lineCap = 'round';
-
-    //receiving brush color from server
+    ctx.strokeStyle = 'orange'
+        //receiving brush color from server
     socket.on('color', line_color => {
         ctx.strokeStyle = line_color
     })
