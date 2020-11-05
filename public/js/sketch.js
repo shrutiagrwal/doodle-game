@@ -1,20 +1,28 @@
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
-// socket = io();
-// ctx.fillStyle = "blue";
-// ctx.fillRect(0, 0, canvas.width, canvas.height);
-// console.log("entering canvas")
-// ctx.beginPath()
-// ctx.rect(20, 40, 19, 30)
-// ctx.fillStyle = "red"
-// ctx.fill();
 
 let coord = { x: 0, y: 0 };
 let paint = false;
+
+let line_color = "orange";
+let line_width = 10;
+
+function changeColor( newColor ){
+    line_color = newColor;
+}
+
+function changeSize( newSize ){
+    line_width = newSize;
+}
+
+function clearAll() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 // set canvas width and height
 function resize() {
-    ctx.canvas.width = window.innerWidth - 800;
-    ctx.canvas.height = window.innerHeight - 200;
+    ctx.canvas.width = window.innerWidth - 950;
+    ctx.canvas.height = window.innerHeight - 324;
 }
 
 function getPosition(event) {
@@ -43,7 +51,7 @@ function sketch(event) {
     // to a round shape. 
     ctx.lineCap = 'round';
 
-    ctx.strokeStyle = 'green';
+    ctx.strokeStyle = line_color;
 
     // The cursor to start drawing 
     // moves to this coordinate 
@@ -82,7 +90,7 @@ socket.on('positions', data => {
     // // Sets the end of the lines drawn 
     // // to a round shape. 
     ctx.lineCap = 'round';
-    ctx.strokeStyle = 'green';
+    ctx.strokeStyle = line_color;
     ctx.lineTo(data.x, data.y);
     ctx.moveTo(data.x, data.y)
 

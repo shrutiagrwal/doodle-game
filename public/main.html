@@ -40,6 +40,32 @@
 
             <div class="drawing-board">
                 <canvas id="canvas" class="canvas" style="background-color: black"> </canvas>
+                <div>
+                    <div id="colors_div">
+                        <div class="heading m-2"> Colors : </div>
+                        <div onclick="changeColor('white')" class="colors" style="background-color: white;"></div>
+                        <div onclick="changeColor('yellow')" class="colors" style="background-color: yellow;"></div>
+                        <div onclick="changeColor('orange')" class="colors" style="background-color: orange;"></div>
+                        <div onclick="changeColor('red')" class="colors" style="background-color: red;"></div>
+                        <div onclick="changeColor('green')" class="colors" style="background-color: green;"></div>
+                        <div onclick="changeColor('blue')" class="colors" style="background-color: blue;"></div>
+                        <div onclick="changeColor('brown')" class="colors" style="background-color: brown;"></div>
+                        <div onclick="changeColor('black')" class="colors" style="background-color: black;"></div>
+                    </div>
+                
+                    
+                    <!-- <div id="sizes_div">
+                        <div class="heading m-2"> Brush Size: </div>
+                        <div onclick="changeSize('5')" class="sizes rounded-pill"> <span> Small</span> </div>
+                        <div onclick="changeSize('7')" class="sizes rounded-pill"> Medium </div>
+                        <div onclick="changeSize('15')" class="sizes rounded-pill"> Large </div>
+                    </div> -->
+                    
+                    <div id="options">
+                        <div class="heading m-2 opt" onclick="clearAll()"> Clear all </div>
+                        <div class="heading m-2 opt" onclick="changeColor('black')"> Eraser </div>
+                    </div>
+                </div>
             </div>
 
 

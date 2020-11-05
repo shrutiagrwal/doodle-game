@@ -53,7 +53,7 @@ io.on('connection', socket => {
         console.log("aa");
         const user = getCurrentUser(socket.id);
         console.log(user);
-        socket.to(user.room).emit('b_message', formatMessage(botName, `The word was guessed correctly by ${usrName}`));
+        socket.to(user.room).emit('b_message', formatMessage(botName, `Word is correctly guessed by ${usrName}`));
     });
 
 

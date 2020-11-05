@@ -27,7 +27,7 @@ a {
     text-decoration: none;
 }
 
-.btn {
+#chat-form .btn {
     cursor: pointer;
     padding: 5px 15px;
     background: var(--light-color);
